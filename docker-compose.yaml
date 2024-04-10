@@ -1,0 +1,25 @@
+version: '3.7'
+services:
+  wdp5-backend:
+    image: "prisma-example:v0.0.1"
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: prisma-example
+    restart: always
+    env_file:
+      - ./.env
+    ports:
+      - 33100:13000
+
+  wdp5-backend-pkg:
+    image: "prisma-example:v0.0.1-pkg"
+    build:
+      context: ./
+      dockerfile: pkg.Dockerfile
+    container_name: prisma-example-pkg
+    restart: always
+    env_file:
+      - ./.env
+    ports:
+      - 33200:13000

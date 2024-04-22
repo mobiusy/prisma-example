@@ -1,6 +1,6 @@
 version: '3.7'
 services:
-  wdp5-backend:
+  prisma-example:
     image: "prisma-example:v0.0.1"
     build:
       context: ./
@@ -12,7 +12,7 @@ services:
     ports:
       - 33100:13000
 
-  wdp5-backend-pkg:
+  prisma-example-pkg:
     image: "prisma-example:v0.0.1-pkg"
     build:
       context: ./
